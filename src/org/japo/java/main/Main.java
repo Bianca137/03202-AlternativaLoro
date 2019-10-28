@@ -15,15 +15,47 @@
  */
 package org.japo.java.main;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  *
  * @author Bianca Antonela Glavan - biancaantonela.glavan.alum@iescamp.es
  */
 public class Main {
+
+    public static final Scanner SCN
+            = new Scanner(System.in, "Windows-1252")
+                    .useLocale(Locale.ENGLISH).useDelimiter("\\s+");
+
     public static void main(String[] args) {
+
+        final String NOMBRE_DUENO = "Sócrates";
+        final String AVE_CESAR = "¡Ave César!";
+        final String SOCRATES_SOCORRO = "¡Sócrates Socorro!";
+        String mensajeLoro;
+
+        System.out.println("Alternativa Loro");
+        System.out.println("================");
+
+        System.out.print("Persona que se acerca......: ");
+        String persona = SCN.nextLine();
         
-    
+        System.out.println("");
         
+        System.out.printf("Dueño del loro.............: %s%n", NOMBRE_DUENO);
+
+        if (persona.equals(NOMBRE_DUENO)) {
+            mensajeLoro = AVE_CESAR;
+
+        } else {
+
+            mensajeLoro = SOCRATES_SOCORRO;
+
+        }
+
+        System.out.println("Mensaje Loro ..............: " + mensajeLoro);
+
     }
-    
+
 }
